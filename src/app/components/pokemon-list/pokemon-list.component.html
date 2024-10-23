@@ -1,13 +1,14 @@
-
 <div class="container mt-3">
     <div class="row">
-        @for(pokemon of listadoPokemon; track pokemon.url){
-        <div class="col-md-3 col-sm-6 mb-4">
-            <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/'
-                     + pokemon.url.split('/')[pokemon.url.split('/').length - 2].padStart(3, '0') +  '.png'"
-                class="card-img-top mb-2 rounded">
-            <div class="card-body">
-                <p class="card-text text-center">{{pokemon.name}}</p>
+        @for(pokemon of listadoPokemon; track pokemon.url) {
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 shadow">
+                <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/' 
+                         + pokemon.url.split('/')[pokemon.url.split('/').length - 2].padStart(3, '0') +  '.png'"
+                    class="card-img-top mb-2 rounded" alt="{{ pokemon.name }}">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ pokemon.name }}</h5>
+                </div>
             </div>
         </div>
         }
