@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
