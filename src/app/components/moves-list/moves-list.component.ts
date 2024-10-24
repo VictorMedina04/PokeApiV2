@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovesService } from '../../services/moves.service';
-import { MoveResponse } from '../../interfaces/moves.interfaces';
+import { MovesResponse, Moves } from '../../interfaces/moves.interfaces';
 
 
 @Component({
@@ -10,14 +10,25 @@ import { MoveResponse } from '../../interfaces/moves.interfaces';
 })
 export class MovesListComponent implements OnInit {
 
-  listadoMovimientos: MoveResponse[] = [];
+  listadoMovimientos: Moves[] = [];
 
-  constructor(private moveService: MovesService) { }
+  constructor(private machineService: MovesService) { }
 
   ngOnInit(): void {
-    this.moveService.getMoveList(20).subscribe((resp => {
-      this.listadoMovimientos = resp.results;
-    }));
+    this.machineService.getMoveList(1025)
+      .subscribe(machineListResult => {
+        this.listadoMovimientos = machineListResult.results;
+      });
+
   }
 
+  getId(url: string): string {
+    let subcadenas = url.split('/');
+    let id = subcadenas[subcadenas.length - 2];
+    return id.padStart(4, '0');
+  }
+
+  capitalizeFirstLetter(name: string): string {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
 }
