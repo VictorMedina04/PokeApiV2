@@ -8,6 +8,7 @@ import { ItemComponent } from './components/item/item.component';
 const routes: Routes = [
   { path: 'pokemon-list', component: PokemonListComponent },
   { path: 'items', component: ItemComponent },
+  { path: 'moves', component: ItemComponent },
   { path: '', redirectTo: '/pokemon-list', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
