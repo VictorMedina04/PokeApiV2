@@ -26,10 +26,14 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    text-align: center; /* Centra el texto dentro de las cajas */
-    width: 100%; /* Ajusta el ancho de la caja */
-    margin-left: auto; /* Centra la caja horizontalmente */
-    margin-right: auto; /* Centra la caja horizontalmente */
+    text-align: center;
+    /* Centra el texto dentro de las cajas */
+    width: 100%;
+    /* Ajusta el ancho de la caja */
+    margin-left: auto;
+    /* Centra la caja horizontalmente */
+    margin-right: auto;
+    /* Centra la caja horizontalmente */
 }
 
 .text-right {

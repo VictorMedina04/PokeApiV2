@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center mt-2 mb-2">
+    <div class="card" style="width: 65rem;">
+        <div class="row no-gutters align-items-center">
+            <div class="col-md-12 text-center mt-2">
+                <h2 class="card-title">{{ item?.id ? formatOrder(item?.id || 0) : '' }} {{ item!.name ?
+                    capitalizeFirstLetter(item!.name || '') : '' }}</h2>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <img [src]="item!.sprites!.default" class="card-img-top foto-pkmn" [alt]="item!.name" />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="card-section text-center">
+                        <h3 class="card-title">Category</h3>
+                        @for (category of item!.category.name; track category) {
+                        <p class="card-text">{{ item!.category!.name }}</p>
+                        }
+                    </div>
+
+                    <div class="card-section text-center">
+                        <h3 class="card-title">Attributes</h3>
+                        @for (attribute of item!.attributes; track attribute) {
+                        <p class="card-text">{{ attribute.name }}</p>
+                        }
+                    </div>
+
+                    <div class="card-section text-center">
+                        <h3 class="card-title">Effects</h3>
+                        @for (effect of item!.effect_entries; track effect) {
+                        <p class="card-text">{{ effect.effect }}</p>
+                        <p class="card-text"><strong>Short Effect:</strong> {{ effect.short_effect }}</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
