@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ItemListResponse } from '../interfaces/Item.interfaces';
 import { Observable } from 'rxjs';
-import { MovesListComponent } from '../components/moves-list/moves-list.component';
-import { MovesListResponse } from '../interfaces/moves.interfaces';
+import { MoveResponse } from '../interfaces/moves.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ItemService {
+export class MovesService {
 
   constructor(private http: HttpClient) { }
+  
 
-  getMoveList(limit: number): Observable<MovesListResponse>{
-    
-    return this.http.get<MovesListComponent>(`https://pokeapi.co/api/v2/machine/`);
+  getMoveList(limit: number) : Observable<MoveResponse> {
+    return this.http.get<MoveResponse>(`https://pokeapi.co/api/v2/machine`);
   }
+
+
  
 }

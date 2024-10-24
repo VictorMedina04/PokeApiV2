@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../../interfaces/Item.interfaces';
-import { ItemService } from '../../services/item.service';
-import { Moves } from '../../interfaces/moves.interfaces';
+import { MovesService } from '../../services/moves.service';
+import { MoveResponse } from '../../interfaces/moves.interfaces';
+
 
 @Component({
   selector: 'app-moves-list',
@@ -9,14 +9,15 @@ import { Moves } from '../../interfaces/moves.interfaces';
   styleUrl: './moves-list.component.css'
 })
 export class MovesListComponent implements OnInit {
-  
-  listadoMovimientos: Moves[] = [];
 
-  constructor(private itemService : ItemService) { }
-  
+  listadoMovimientos: MoveResponse[] = [];
+
+  constructor(private moveService: MovesService) { }
+
   ngOnInit(): void {
-    this.itemService.getMoveList(20).subscribe((resp=>{
+    this.moveService.getMoveList(20).subscribe((resp => {
       this.listadoMovimientos = resp.results;
     }));
   }
+
 }

@@ -1,10 +1,21 @@
-export interface MovesListResponse {
-    count: number
-    next: string
-    previous: any
-    results: Moves[]
-  }
-  
-  export interface Moves {
-    url: string
-  }
+export interface MoveResponse {
+  id: number
+  item: Item
+  move: Move
+  version_group: VersionGroup
+}
+
+export interface Item {
+  name: string
+  url: string
+}
+
+export interface Move {
+  name: string
+  url: string
+}
+
+export interface VersionGroup {
+  name: string
+  url: string
+}
