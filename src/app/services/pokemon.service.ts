@@ -9,13 +9,18 @@ import { PokemonDetailsResponse } from '../interfaces/pokemon-detail.interfaces'
 })
 export class PokemonService {
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getPokemonlist(): Observable<PokemonListResponse> {
-    return this.http.get<PokemonListResponse>('https://pokeapi.co/api/v2/pokemon');
+  // getPokemonlist(): Observable<PokemonListResponse> {
+  //   return this.http.get<PokemonListResponse>('https://pokeapi.co/api/v2/pokemon');
+  // }
+
+  getPokemonList(limit: number): Observable<PokemonListResponse> {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`) as Observable<PokemonListResponse>;
   }
-  
+
+
   getOnePokemon(id: number): Observable<PokemonDetailsResponse> {
-  return this.http.get<PokemonDetailsResponse>(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+    return this.http.get<PokemonDetailsResponse>(`https://pokeapi.co/api/v2/pokemon/${id}/`);
   }
 }
