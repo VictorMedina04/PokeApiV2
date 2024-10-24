@@ -7,6 +7,7 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { ItemComponent } from './components/item/item.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { ItemComponent } from './components/item/item.component';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
