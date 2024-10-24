@@ -10,7 +10,8 @@ export class ItemService {
 
   constructor(private http: HttpClient) { }
 
-  getItemList(): Observable<ItemListResponse>{ 
-    return this.http.get<ItemListResponse>('https://pokeapi.co/api/v2/item/');
+  getItemList(limit: number): Observable<ItemListResponse>{ 
+    return this.http.get<ItemListResponse>(`https://pokeapi.co/api/v2/item?limit=${limit}`);
   }
+ 
 }

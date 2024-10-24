@@ -1,12 +1,17 @@
-.card-text{
-    text-align: center;
+.card-text {
+  text-align: center;
 }
-.card{
+
+.card {
   align-items: center;
   margin-right: 30px;
   margin-bottom: 20px;
   margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s;
 }
+
 .container-center {
   display: flex;
   justify-content: center;
@@ -14,4 +19,27 @@
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
