@@ -19,6 +19,9 @@ export class ItemComponent implements OnInit {
       this.listadoObjetos = resp.results;
     }));
   }
- 
+
+  getImg(imagen : string){
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${imagen}.png`;
+  }
 
 }

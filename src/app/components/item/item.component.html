@@ -1,8 +1,12 @@
-@for (item of listadoObjetos; track item.name) {
-<div class="card" style="width: 18rem;">
-    <img [src]="item.url" class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text">{{item.name}}</p>
+<div class="row container-center">
+
+    @for (item of listadoObjetos; track item.name) {
+
+    <div class="card" style="width: 18rem;">
+        <img [src]="getImg(item.name)" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">{{item.name}}</p>
+        </div>
     </div>
+    }
 </div>
-}
