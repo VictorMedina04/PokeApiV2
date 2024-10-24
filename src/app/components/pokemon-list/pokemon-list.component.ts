@@ -22,4 +22,14 @@ export class PokemonListComponent implements OnInit {
       });
   }
 
+  getId(url: string): string {
+    let subcadenas = url.split('/');
+    let id = subcadenas[subcadenas.length - 2];
+    return id.padStart(4, '0');
+  }
+  capitalizeFirstLetter(name: string): string {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
+
 }
