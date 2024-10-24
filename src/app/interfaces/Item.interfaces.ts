@@ -1,11 +1,11 @@
-export interface Root {
+export interface ItemListResponse {
     count: number
     next: string
     previous: any
-    results: Result[]
+    results: Item[]
 }
 
-export interface Result {
+export interface Item {
     name: string
     url: string
 }
