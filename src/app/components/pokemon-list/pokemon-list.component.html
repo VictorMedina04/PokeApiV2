@@ -1,16 +1,19 @@
 <div class="container mt-3">
     <div class="row">
         @for(pokemon of listadoPokemon; track pokemon.url) {
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+        <div [routerLink]="['/pokemon-details', getId(pokemon.url)]" class="col-lg-4 col-md-4 col-sm-6 mb-4">
             <div class="card h-100 shadow" style="max-width: 22rem;">
                 <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' 
                              + pokemon.url.split('/')[pokemon.url.split('/').length - 2] + '.png'"
                     class="card-img-top img-fluid rounded-start" style="max-height: 200px; object-fit: contain;">
                 <div class="card-body">
-                    <h5 class="card-title text-center">#{{ getId(pokemon.url) }} {{ capitalizeFirstLetter(pokemon.name)
+                    <h5 class="card-title text-center">#{{ getId(pokemon.url) }} {{
+                        capitalizeFirstLetter(pokemon.name)
                         }}</h5>
+
                 </div>
             </div>
+
         </div>
         }
     </div>
