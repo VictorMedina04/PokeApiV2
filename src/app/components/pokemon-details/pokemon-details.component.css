@@ -1,0 +1,55 @@
+.type-icon {
+    width: 140px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+
+
+.stat-container span {
+    width: 100px;
+    text-transform: capitalize;
+}
+
+.progress {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.progress-bar {
+    text-align: right;
+    padding-right: 5px;
+}
+
+.card-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center; /* Centra el texto dentro de las cajas */
+    width: 100%; /* Ajusta el ancho de la caja */
+    margin-left: auto; /* Centra la caja horizontalmente */
+    margin-right: auto; /* Centra la caja horizontalmente */
+}
+
+.text-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 450px;
+}
+
+.text-left {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 450px;
+}
+
+.foto-pkmn {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.align-items-center {
+    align-items: center;
+}
