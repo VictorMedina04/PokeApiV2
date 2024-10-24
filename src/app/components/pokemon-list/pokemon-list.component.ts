@@ -16,7 +16,7 @@ export class PokemonListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.pokemonService.getPokemonlist()
+    this.pokemonService.getPokemonList(1025)
       .subscribe(pokemonListResult => {
         this.listadoPokemon = pokemonListResult.results;
       });
