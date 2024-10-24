@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { ItemComponent } from './components/item/item.component';
 import { provideHttpClient } from '@angular/common/http';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { provideHttpClient } from '@angular/common/http';
     PageNotFoundComponent,
     MenuComponent,
     PokemonListComponent,
-    ItemComponent
+    ItemComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,
