@@ -22,7 +22,9 @@ import { provideHttpClient } from '@angular/common/http';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [provideHttpClient()],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
