@@ -18,8 +18,6 @@ export class ItemDetailsComponent implements OnInit {
     
   }
 
-
-
   ngOnInit(): void {
     
     this.itemId= Number(this.route.snapshot.paramMap.get('id'));

@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center mt-2 mb-2">
+    <div class="card" style="width: 65rem;">
+        <div class="row no-gutters align-items-center">
+            <div class="col-md-12 text-center mt-4">
+                <h2 class="card-title">{{ move?.id ? formatOrder(move!.id || 0) : '' }} {{ move!.name ?
+                    capitalizeFirstLetter(move!.name || '') : '' }}</h2>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <p class="card-text">
+                    <img [src]="getTypeImageUrl(move!.type.name)" [alt]="move!.type.name" class="type-icon" />
+                </p>
+            </div>
+
+            <div class="col-md-8 mb-3">
+                <div class="card-body">
+
+                    <div class="card-section text-center mt-4">
+                        <h3 class="card-title">Accuracy: {{ move!.accuracy }}%</h3>
+                    </div>
+
+                    <div class="card-section text-center mt-4">
+                        <h3 class="card-text">Pp : {{ move!.pp }}</h3>
+                    </div>
+
+                    <div class="card-section text-center mt-4">
+                        <h3 class="card-text">Power : {{ move!.power }}</h3>
+                    </div>
+                    <div class="card-section text-center mt-4">
+                        <h3 class="card-text">Damage class : {{ move!.damage_class.name}}</h3>
+                    </div>
+                    
+
+
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3 mx-5 mb-4">
+            <div class="text-left">
+                <button *ngIf="move!.id > 1" class="btn btn-primary" (click)="goToPreviousMove()">Previous Move</button>
+                <button *ngIf="move!.id === 1" class="btn btn-primary" (click)="goToPreviousMove()">Back to Move
+                    List</button>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-primary" (click)="goToNextMove()">Next Move</button>
+            </div>
+        </div> 
+    </div>
+
+</div>

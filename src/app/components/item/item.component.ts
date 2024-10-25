@@ -29,4 +29,6 @@ export class ItemComponent implements OnInit {
     let id = subcadenas[subcadenas.length - 2];
     return id.padStart(4, '0');
   }
+
+  
 }
