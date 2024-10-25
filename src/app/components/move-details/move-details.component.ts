@@ -61,5 +61,23 @@ export class MoveDetailsComponent implements OnInit {
     const typeId = this.typeToIdMap[typeName];
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/${typeId}.png`;
   }
+  goToNextMove(): void {
+    const nextMoveId = (this.move?.id || 0) + 1;
+    this.router.navigateByUrl(`/moves-details/${nextMoveId}`).then(() => {
+      window.location.reload();
+    });
+  }
 
+  goToPreviousMove(): void {
+    const nextMoveId = (this.move?.id || 0) - 1;
+
+    if (nextMoveId < 1) {
+      this.router.navigateByUrl(`/moves`).then(() => { window.location.reload(); });
+    } else {
+      this.router.navigateByUrl(`/moves-details/${nextMoveId}`).then(() => {
+        window.location.reload();
+
+      });
+    }
+  }
 }
