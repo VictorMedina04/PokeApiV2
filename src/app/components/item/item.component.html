@@ -2,13 +2,14 @@
 
     @for (item of listadoObjetos; track item.name) {
 
-    <div class="card" style="width: 12rem;">
+     <div [routerLink]="['/item-details', getItemId(item.url)]" class="card" style="width: 12rem;">
         <img [src]="getImg(item.name)" class="card-img-top" alt="..." class="card-img-top img-fluid rounded-start"
             style="max-height: 200px; object-fit: contain;">
 
         <div class="card-body">
             <p class="card-text">{{item.name}}</p>
         </div>
-    </div>
+    </div> 
+
     }
 </div>

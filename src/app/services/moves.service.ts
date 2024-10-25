@@ -9,16 +9,16 @@ import { MovesResponse } from '../interfaces/moves.interfaces';
 export class MovesService {
 
   constructor(private http: HttpClient) { }
-  
 
- 
-  getMoveList(limit: number) : Observable<MovesResponse> {
+
+
+  getMoveList(limit: number): Observable<MovesResponse> {
     return this.http.get<MovesResponse>(`https://pokeapi.co/api/v2/move?limit=${limit}`);
   }
-  
 
 
 
 
- 
+
+
 }
