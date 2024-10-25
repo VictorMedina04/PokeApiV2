@@ -12,17 +12,17 @@ export class MovesListComponent implements OnInit {
 
   listadoMovimientos: Moves[] = [];
 
-  constructor(private machineService: MovesService) { }
+  constructor(private moveService: MovesService) { }
 
   ngOnInit(): void {
-    this.machineService.getMoveList(1025)
-      .subscribe(machineListResult => {
-        this.listadoMovimientos = machineListResult.results;
+    this.moveService.getMoveList(1025)
+      .subscribe(MoveListResult => {
+        this.listadoMovimientos = MoveListResult.results;
       });
 
   }
 
-  getId(url: string): string {
+  getMoveId(url: string): string {
     let subcadenas = url.split('/');
     let id = subcadenas[subcadenas.length - 2];
     return id.padStart(4, '0');
